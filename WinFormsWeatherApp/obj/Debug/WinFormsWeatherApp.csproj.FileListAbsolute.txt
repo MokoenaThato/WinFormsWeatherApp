@@ -1,0 +1,14 @@
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\bin\Debug\WinFormsWeatherApp.exe.config
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\bin\Debug\WinFormsWeatherApp.exe
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\bin\Debug\WinFormsWeatherApp.pdb
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.Properties.Resources.resources
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.csproj.GenerateResource.cache
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.csproj.CopyComplete
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.exe
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.pdb
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.MainPageForm.resources
+C:\Users\User\Documents\Dreams\Grace\StepUP\WinFormsWeatherApp\obj\Debug\WinFormsWeatherApp.WeatherForecastUC.resources
