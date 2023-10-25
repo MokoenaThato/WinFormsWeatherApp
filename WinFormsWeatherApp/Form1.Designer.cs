@@ -54,6 +54,7 @@
             this.lblTemp = new System.Windows.Forms.Label();
             this.lblCityName = new System.Windows.Forms.Label();
             this.flpHourlyWeather = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.weatherIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,13 +62,12 @@
             // 
             // weatherIcon
             // 
-            this.weatherIcon.Location = new System.Drawing.Point(538, 124);
+            this.weatherIcon.Location = new System.Drawing.Point(517, 126);
             this.weatherIcon.Name = "weatherIcon";
-            this.weatherIcon.Size = new System.Drawing.Size(83, 61);
+            this.weatherIcon.Size = new System.Drawing.Size(117, 79);
             this.weatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.weatherIcon.TabIndex = 0;
+            this.weatherIcon.TabIndex = 21;
             this.weatherIcon.TabStop = false;
-            this.weatherIcon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(607, 256);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 145);
@@ -170,20 +170,19 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCyan;
-            this.label1.Location = new System.Drawing.Point(297, 31);
+            this.label1.Location = new System.Drawing.Point(332, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 36);
             this.label1.TabIndex = 4;
             this.label1.Text = "City:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbCityName
             // 
             this.tbCityName.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tbCityName.Location = new System.Drawing.Point(454, 34);
-            this.tbCityName.Multiline = true;
+            this.tbCityName.Location = new System.Drawing.Point(454, 43);
             this.tbCityName.Name = "tbCityName";
-            this.tbCityName.Size = new System.Drawing.Size(232, 33);
+            this.tbCityName.Size = new System.Drawing.Size(232, 20);
             this.tbCityName.TabIndex = 15;
             // 
             // btnSearch
@@ -191,9 +190,9 @@
             this.btnSearch.BackColor = System.Drawing.Color.LightBlue;
             this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.btnSearch.Location = new System.Drawing.Point(715, 28);
+            this.btnSearch.Location = new System.Drawing.Point(692, 32);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(136, 47);
+            this.btnSearch.Size = new System.Drawing.Size(102, 39);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -223,7 +222,7 @@
             // 
             this.lblDescription.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDescription.Location = new System.Drawing.Point(78, 105);
+            this.lblDescription.Location = new System.Drawing.Point(100, 106);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(94, 26);
             this.lblDescription.TabIndex = 11;
@@ -271,7 +270,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.lblCondition);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(56, 256);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(496, 145);
@@ -304,9 +303,9 @@
             this.lblTemp.BackColor = System.Drawing.Color.Transparent;
             this.lblTemp.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTemp.Location = new System.Drawing.Point(535, 206);
+            this.lblTemp.Location = new System.Drawing.Point(535, 217);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(86, 27);
+            this.lblTemp.Size = new System.Drawing.Size(99, 27);
             this.lblTemp.TabIndex = 18;
             this.lblTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -315,7 +314,7 @@
             this.lblCityName.BackColor = System.Drawing.Color.Transparent;
             this.lblCityName.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCityName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCityName.Location = new System.Drawing.Point(494, 82);
+            this.lblCityName.Location = new System.Drawing.Point(489, 86);
             this.lblCityName.Name = "lblCityName";
             this.lblCityName.Size = new System.Drawing.Size(162, 27);
             this.lblCityName.TabIndex = 19;
@@ -331,6 +330,17 @@
             this.flpHourlyWeather.TabIndex = 20;
             this.flpHourlyWeather.WrapContents = false;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(53, 441);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 32);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "3-Hour Forecast";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +348,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1147, 653);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.flpHourlyWeather);
             this.Controls.Add(this.lblCityName);
             this.Controls.Add(this.lblTemp);
@@ -384,6 +395,7 @@
         public System.Windows.Forms.Label lblTemp;
         public System.Windows.Forms.Label lblCityName;
         private System.Windows.Forms.FlowLayoutPanel flpHourlyWeather;
+        private System.Windows.Forms.Label label4;
     }
 }
 

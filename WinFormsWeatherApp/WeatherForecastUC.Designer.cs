@@ -37,16 +37,17 @@
             // 
             // picWeatherIcon
             // 
-            this.picWeatherIcon.Location = new System.Drawing.Point(18, 21);
+            this.picWeatherIcon.Location = new System.Drawing.Point(3, 21);
             this.picWeatherIcon.Name = "picWeatherIcon";
             this.picWeatherIcon.Size = new System.Drawing.Size(107, 93);
+            this.picWeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWeatherIcon.TabIndex = 0;
             this.picWeatherIcon.TabStop = false;
             // 
             // lblTemp
             // 
             this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTemp.Location = new System.Drawing.Point(168, 21);
+            this.lblTemp.Location = new System.Drawing.Point(116, 21);
             this.lblTemp.Name = "lblTemp";
             this.lblTemp.Size = new System.Drawing.Size(100, 23);
             this.lblTemp.TabIndex = 1;
@@ -55,7 +56,7 @@
             // lblTime
             // 
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(168, 58);
+            this.lblTime.Location = new System.Drawing.Point(116, 55);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(100, 21);
             this.lblTime.TabIndex = 2;
@@ -64,7 +65,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(168, 89);
+            this.label3.Location = new System.Drawing.Point(116, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 3;
@@ -74,13 +75,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.picWeatherIcon);
             this.Name = "WeatherForecastUC";
-            this.Size = new System.Drawing.Size(394, 142);
+            this.Size = new System.Drawing.Size(263, 137);
             ((System.ComponentModel.ISupportInitialize)(this.picWeatherIcon)).EndInit();
             this.ResumeLayout(false);
 

@@ -65,6 +65,7 @@ namespace WinFormsWeatherApp.Models
         {
             [JsonProperty("3h")]
             public double _3h { get; set; }
+            public double precipitaion => Math.Round(_3h);
         }
 
         public class Root

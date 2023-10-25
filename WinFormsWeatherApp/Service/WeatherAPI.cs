@@ -23,7 +23,7 @@ namespace WinFormsWeatherApp.Service
             results = null;
         }
 
-        public WeatherClasses.Root GetWeatherByCity(string city)
+        public WeatherClasses.Root GetWeatherByCity(string city) // Method to retrieve and deserialize the json response from the openweathermap API
         {
             try
             {
@@ -44,7 +44,7 @@ namespace WinFormsWeatherApp.Service
          return results;
         }
 
-        public WeatherForecast.Root GetWeatherForecast(double latitude, double longitude)
+        public WeatherForecast.Root GetWeatherForecast(double latitude, double longitude) // Method to retrieve and deserialize the json response from the openweathermap API
         {
             try
             {

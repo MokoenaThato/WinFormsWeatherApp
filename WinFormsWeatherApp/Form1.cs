@@ -12,17 +12,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsWeatherApp.Service;
 using WinFormsWeatherApp.Models;
-//using WinFormsWeatherApp.Service;
+using System.Runtime.InteropServices;
 
 namespace WinFormsWeatherApp
 {
     public partial class MainPageForm : Form
     {
-        WeatherAPI serv;
+        private WeatherAPI serv;
         private double longitude;
         private double latitude;
         private DateTime sunrise;
         private DateTime sunset;
+        private string city;
 
         public MainPageForm()
         {
@@ -33,72 +34,87 @@ namespace WinFormsWeatherApp
         }
 
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string city = tbCityName.Text;
+            city = tbCityName.Text;
 
-            lblCondition.Text = "";
-            lblDescription.Text = "";
+            if (city != null)
+            {
+                lblCondition.Text = "";
+                lblDescription.Text = "";
 
-            WeatherClasses.Root currentWeather = serv.GetWeatherByCity(city);
+                WeatherClasses.Root currentWeather = serv.GetWeatherByCity(city); // call to the GetWeatherByCity method in the WeatherAPI class
 
-            latitude = currentWeather.coord.lat;
-            longitude = currentWeather.coord.lon;
+                latitude = currentWeather.coord.lat;
+                longitude = currentWeather.coord.lon;
 
-            WeatherForecast.Root hourlyWeather = serv.GetWeatherForecast(latitude,longitude);
+                WeatherForecast.Root ThreeHourWeather = serv.GetWeatherForecast(latitude, longitude); // call to the GetWeatherForecast method in the WeatherAPI class
 
-            
+                GetCurrWeather(currentWeather);
+                GetThreeHourWeather(ThreeHourWeather);
+            }
+            else 
+            {
+                MessageBox.Show("Please Enter City Name");
+            } 
+        }
 
+        public void GetCurrWeather(WeatherClasses.Root currWeather)// Method to call the API to get the current weather forcast accodrding to city name
+        {
             try
             {
-                lblCityName.Text = currentWeather.name;
-                lblTemp.Text = currentWeather.main.temperature.ToString() + "°C";
+                lblCityName.Text = currWeather.name;
+                lblTemp.Text = currWeather.main.temperature.ToString() + "°C";
 
-                sunrise = convertToDateTime(currentWeather.sys.sunrise);
-                sunset = convertToDateTime(currentWeather.sys.sunset);
+                sunrise = convertToDateTime(currWeather.sys.sunrise);
+                sunset = convertToDateTime(currWeather.sys.sunset);
 
-                weatherIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
+                weatherIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + currWeather.weather[0].icon + ".png";
 
-                lblCondition.Text = currentWeather.weather[0].main;
-                lblDescription.Text = currentWeather.weather[0].description;
+                lblCondition.Text = currWeather.weather[0].main;
+                lblDescription.Text = currWeather.weather[0].description;
 
-                lblMaxTemp.Text = currentWeather.main.maxTemperature.ToString() + "°C";
-                lblMinTemp.Text = currentWeather.main.minTemperature.ToString() + "°C";
+                lblMaxTemp.Text = currWeather.main.maxTemperature.ToString() + "°C";
+                lblMinTemp.Text = currWeather.main.minTemperature.ToString() + "°C";
 
-                lblWind.Text = currentWeather.wind.speed.ToString() + " km/h";
-                lblHumidity.Text = currentWeather.main.humidity.ToString() + "%";
+                lblWind.Text = currWeather.wind.speed.ToString() + " km/h";
+                lblHumidity.Text = currWeather.main.humidity.ToString() + "%";
 
                 lblSunrise.Text = sunrise.ToShortTimeString();
                 lblSunset.Text = sunset.ToShortTimeString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
 
-            WeatherForecastUC forecastUC;
+        public void GetThreeHourWeather(WeatherForecast.Root ThreeHourWeather) // Method to call the API and get the 3-Hour weather forcast according to city coordinates
+        {
+            try
+            {
+                WeatherForecastUC forecastUC;
 
-            foreach (var item in hourlyWeather.list)
-            { 
-                forecastUC = new WeatherForecastUC();   
+                foreach (var item in ThreeHourWeather.list)
+                {
+                    forecastUC = new WeatherForecastUC();
 
-                forecastUC.picWeatherIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + item.weather[0].icon + ".png";
+                    forecastUC.picWeatherIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + item.weather[0].icon + ".png";
 
-                forecastUC.lblTemp.Text = item.main.temperature.ToString() + "°C";
-                forecastUC.lblTime.Text = convertToDateTime(item.dt).ToShortTimeString();
+                    forecastUC.lblTemp.Text = item.main.temperature.ToString() + "°C";
+                    forecastUC.lblTime.Text = convertToDateTime(item.dt).ToShortTimeString();
+                    forecastUC.label3.Text = item.weather[0].description;
 
-                flpHourlyWeather.Controls.Add(forecastUC);
-
+                    flpHourlyWeather.Controls.Add(forecastUC);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
-
-        public DateTime convertToDateTime(int millisecDate)
+        public DateTime convertToDateTime(int millisecDate) // Method to convert the json date to local date time
         {
             DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
             dt = dt.AddSeconds(millisecDate).ToLocalTime();
